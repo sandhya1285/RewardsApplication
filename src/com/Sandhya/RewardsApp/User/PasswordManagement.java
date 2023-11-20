@@ -8,7 +8,7 @@ import java.util.Base64.Encoder;
 import java.util.HashMap;
 import java.util.Map;
 
-class PasswordManagement {
+public class PasswordManagement {
 	static Map<String,String> credentials=new HashMap<>();
 	static {
 		credentials.put("Sandhya", "Sony1234");
@@ -29,5 +29,10 @@ class PasswordManagement {
         String original=new String(bytes);
         return original;
     }
-
+    public static boolean compare(String name, String password) {
+    	if(password.equals(credentials.get(name))) {
+    		return true;
+    	}
+    	return false;
+    }
 }
